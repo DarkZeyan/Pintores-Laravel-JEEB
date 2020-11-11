@@ -44,6 +44,9 @@ body{
 h1,h2,h3,h4,h5,h6,p,b,a{
     color: white;
 }
+label{
+    color: white;
+}
 .fa {
     padding: 20px;
     font-size: 25px;
@@ -171,6 +174,6 @@ body {
     min-height: 100vh;
     position: relative;
     margin: 0;
-    padding-bottom: 110px; //height of the footer
-box-sizing: border-box;
+    padding-bottom: 110px; 
+    box-sizing: border-box;
 }

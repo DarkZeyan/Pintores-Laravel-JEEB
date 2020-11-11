@@ -8,7 +8,12 @@ class PintoresController extends Controller
 {   
 
     function login(){
-        return view('pageLogin.formulario');
+        return view('pageLogin.formulario',[
+            'title'=>'Login',
+            'tituloHeader'=>'Página de Inicio de Sesión',
+            'nombre'=>'Jorge Eduardo Escobar Bugarini',
+            'grupo' => '5°E'
+        ]);
     }
 
     function validarLogin(Request $request){
@@ -16,20 +21,28 @@ class PintoresController extends Controller
         $pass = $request->input('password');
         $key = $request->input('key');
 
-        if($user === 'zeyan' && $pass='cbtis122'){
+        if($user === 'zeyan' && $pass==='cbtis122'){
             $url='principal';
+            $title='Pintores';
+            $tituloHeader='Página Principal - Pintores';
         }
         else{
             $url='pageLogin.formulario';
+            $title='Login';
+            $tituloHeader='Página de Inicio de Sesión';
         }
         return view($url,[
-            'user'=>$request->input('user')
+            'user'=>$request->input('user'),
+            'title'=>$title,
+            'tituloHeader'=>$tituloHeader,
+            'nombre'=>'Jorge Eduardo Escobar Bugarini',
+            'grupo' => '5°E'
         ]);
     }
     function principal(){
         return view('principal',[
             'title'=>'Pintores',
-            'headerTitulo'=>'Página Principal - Pintores',
+            'tituloHeader'=>'Página Principal - Pintores',
             'nombre'=>'Jorge Eduardo Escobar Bugarini',
             'grupo' => '5°E'
         ]);
@@ -37,7 +50,7 @@ class PintoresController extends Controller
     function davinci(){
         return view('davinci',[
             'title'=>'Leonardo Da Vinci',
-            'headerTitulo'=>'Leonardo Da Vinci',
+            'tituloHeader'=>'Leonardo Da Vinci',
             'nombre'=>'Jorge Eduardo Escobar Bugarini',
             'grupo' => '5°E'
         ]);
@@ -45,7 +58,7 @@ class PintoresController extends Controller
     function picasso(){
         return view('picasso',[
             'title'=>'Pablo Picasso',
-            'headerTitulo'=>'Pablo Picasso',
+            'tituloHeader'=>'Pablo Picasso',
             'nombre'=>'Jorge Eduardo Escobar Bugarini',
             'grupo' => '5°E'
         ]);
@@ -53,7 +66,7 @@ class PintoresController extends Controller
     function vangogh(){
         return view('vangogh',[
             'title'=>'Vicent Van Gogh',
-            'headerTitulo'=>'Vicent Van Gogh',
+            'tituloHeader'=>'Vicent Van Gogh',
             'nombre'=>'Jorge Eduardo Escobar Bugarini',
             'grupo' => '5°E'
         ]);
@@ -61,9 +74,17 @@ class PintoresController extends Controller
     function velazquez(){
         return view('velazquez',[
             'title'=>'Diego Velazquez',
-            'headerTitulo'=>'Diego Velazquez',
+            'tituloHeader'=>'Diego Velazquez',
             'nombre'=>'Jorge Eduardo Escobar Bugarini',
             'grupo' => '5°E'
         ]);
+    }
+function datos(){
+    return view('datos',[
+        'title'=>'Datos del Alumno',
+        'tituloHeader'=>'Datos del Alumno',
+        'nombre'=>'Jorge Eduardo Escobar Bugarini',
+        'grupo' => '5°E'
+    ]);
     }
 }

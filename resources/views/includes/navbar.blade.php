@@ -3,13 +3,9 @@
         <li class="nav-item active">
             <a class="nav-link" ><b>Mis pintores favoritos</b></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/">Inicio</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="datos">Datos del Alumno</a>
-        </li>
-
+        @section('navegacion')
+   
+        @show
     </ul>
 </nav>
 <div class="bg-light" style="padding: 2px; border: 4px solid black;">

@@ -13,31 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/validar', );
-Route::get('/login', function () {
-    return view('welcome');
-});
-
-Route::get('/principal', function () {
-    return view('principal');
-});
-
-Route::get('/vinci', function () {
-    return view('welcome');
-});
-
-Route::get('/velazquez', function () {
-    return view('welcome');
-});
-
-Route::get('/picasso', function () {
-    return view('welcome');
-});
-
-Route::get('/vangogh', function () {
-    return view('welcome');
-});
-
-Route::get('/vangogh', function () {
-    return view('welcome');
-});
+Route::post('/validar', 'PintoresController@validarLogin');
+Route::get('/', 'PintoresController@login');
+Route::get('/principal', 'PintoresController@principal');
+Route::get('/davinci', 'PintoresController@davinci');
+Route::get('/velazquez', 'PintoresController@velazquez');
+Route::get('/picasso', 'PintoresController@picasso');
+Route::get('/vangogh', 'PintoresController@vangogh');
+Route::get('/datos', 'PintoresController@datos');
